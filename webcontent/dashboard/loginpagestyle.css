@@ -1,0 +1,257 @@
+body {
+
+    background-color: #22252f;
+    margin: 0px;
+    padding: 0px;
+}
+
+p {
+
+    font-family: 'Mulish', sans-serif;
+    color: #9295a4;
+    border-radius: 3px;
+}
+
+.alr {
+
+    position: static;
+    display: flex;
+    align-items: right;
+    justify-content: right;
+    overflow: hidden;
+}
+
+.lgibtn {
+
+  font-family: 'Mulish', sans-serif;
+  color: #9295a4;
+  background-color: #2b2e3b;
+  font-size: 16px;
+  padding: 16px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.lgibtn:hover, .lgibtn:focus {
+
+  transition: background-color 0.3s ease-in-out;
+  background-color: #22252f;
+}
+
+.dropdown {
+
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+
+  display: none;
+  position: absolute;
+  background-color: #2b2e3b;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+
+  font-family: 'Mulish', sans-serif;
+  color: #9295a4;
+  border-radius: 3px;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+
+    transition: background-color 0.3s ease-in-out;
+    background-color: #22252f;
+}
+
+.show {
+
+    display:block;
+}
+
+.ar {
+    justify-self: right;
+    display: block;
+}
+
+html {
+
+    margin: 0px;
+    padding: 0px;
+}
+
+.i1 {
+    font-family: 'Roboto', sans-serif;
+    animation-name: fadeaway;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@keyframes fadeaway {
+   0% {
+       color:#F0FFF0; width:0%; padding:0px; margin:0px; background-color:#ff6666;
+       height: 0%;
+       opacity: 0;
+       transition: width 0.3s, height 0.3s;
+   }
+   20% {
+    color:#F0FFF0; width:100%; padding:0px; margin:0px; background-color:#ff6666;
+    height: 5%;
+    opacity: 1;
+    transition: width 0.3s, height 0.3s;
+   }
+   75% {
+       color:#F0FFF0; width:100%; padding:0px; margin:0px; background-color:#ff6666;
+       height: 5%;
+       opacity: 1;
+       transition: width 0.3s, height 0.3s;
+   }
+   100% {
+    color:#F0FFF0; width:0%; padding:0px; margin:0px; background-color:#ff6666;
+    height: 0%;
+    opacity: 0;
+    transition: width 0.3s, height 0.3s;
+   }
+}
+
+.loginbgdiv {
+
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    padding: 3em;
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
+    border-color: #2b2e3b;
+    background-color: #2b2e3b;
+}
+
+.field {
+
+    width: 20em;
+    height: 3em;
+    border: solid;
+    border-color: #9295a4;
+    border-radius: 8px;
+    border-width: 2px;
+    background-color: #313441;
+    display: inline-block;
+    padding: 7px;
+    font-family: 'Mulish', sans-serif;
+    color: #9295a4;
+    margin-bottom: 15px;
+}
+
+.button {
+
+    border-radius: 3px;
+    background-color: #5b73e8;
+    border: none;
+    color: white;
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    float: right;
+}
+
+.button:hover {
+
+    background-color: #495cba;
+}
+
+h1 {
+
+    font-family: 'Mulish', sans-serif;
+    color: #5b73e8;
+    float: center;
+    align: center;
+}
+
+ul {
+
+    display: flex;
+    width: 100%;
+    margin-top: 0px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #2b2e3b;
+    max-height: 5%;
+}
+
+li {
+
+    float: left;
+    padding: 0px;
+}
+
+li a {
+
+    display: block;
+    text-align: center;
+    padding: 16px 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+    font-family: 'Mulish', sans-serif;
+    color: #9295a4;
+    font-size: 16px;
+    border-radius: 3px;
+}
+
+.logo {
+
+    display: block;
+    background-image: url("/public/emc-logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: transparent;
+    opacity: 1;
+    background-color: transparent;
+    transition: opacity 0.3s ease-in-out;
+
+}
+
+.logo:hover {
+
+    transition: background-color 0.3s ease-in-out;
+    background-color: #22252f;
+}
+
+li a:hover {
+
+    transition: background-color 0.3s ease-in-out;
+    background-color: #22252f;
+}
+
+
+::-moz-selection {
+
+    color: auto;
+    background: #495cba;
+}
+
+::selection {
+
+    color: auto;
+    background: #495cba;
+}

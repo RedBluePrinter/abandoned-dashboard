@@ -1,0 +1,52 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+            %stylesheet%
+    </style>
+</head>
+    <body>
+        <ul>
+            <ul class="all">
+                <li><a href="/dashboard" class="logo">....</a></li>
+                <li><a href="/dashboard">Dashboard</a></li>
+            </ul>
+            <ul class="alr">
+                <li><button onclick="accountDropDown();" class="lgibtn">%username%</button>
+                    <div id="accDrop" class="dropdown-content">
+                        <a href="/dashboard/account">Account</a>
+                        <a href="/auth/logout" class="accounttext">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </ul>
+        <div>
+            <div class="block">
+                <p>Your Rank: <a style="font-size: 16;">%rank%</a></p>
+            </div>
+        </div>
+    <script>
+        window.history.replaceState(stateObj,
+        "Dashboard", "/dashboard");
+        function accountDropDown() {
+          document.getElementById("accDrop").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+          if (!event.target.matches('.lgibtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+    </script>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <style>
+            %stylesheet%
+        </style>
+    </head>
+    <body>
+    <ul>
+        <ul class="all">
+            <li><a href="/main" class="logo">....</a></li>
+        </ul>
+        <ul class="alr">
+            <li><button onclick="accountDropDown();" class="lgibtn">Login</button>
+                <div id="accDrop" class="dropdown-content">
+                    <a href="/auth/login" class="accounttext">Login</a>
+                </div>
+            </li>
+        </ul>
+    </ul>
+        %msg%
+        <div class="loginbgdiv" id="lf">
+            <h1>Login</h1>
+            <form action="javascript: login()">
+                <input name="type" type="hidden" value="login"/>
+                <p>Email</p>
+                <input name="username" type="text" class="field">
+                <br>
+                <p>Password</p>
+                <input name="password" type="password" class="field">
+                <br>
+                <input name="Login" type="submit" value="Login" class="button">
+            </form>
+        </div>
+    <script>
+    function accountDropDown() {
+                    $.ajax({
+  url:  "/auth/login"
+}).done(function(response) {
+            let stateObj = { id: "100" };
+            window.history.replaceState(stateObj,
+                        "Dashboard", "/auth/login");
+document.open();
+document.write(response);
+document.close();
+});
+    }
+        let stateObj = { id: "100" };
+        window.history.replaceState(stateObj,
+        "Dashboard", "/auth/login");
+        function sleep(n) { return new Promise(resolve=>setTimeout(resolve,n)); }
+        async function deletemsg() {
+            await sleep(5000);
+            document.getElementById("msg").innerHTML = "";
+                //$(function(){
+                //    $('.i1').addClass('o');
+                //});
+//            document.getElementById("msg").innerHTML = "<p class=\"i1\" id=\"msg\" style= \"color:#F0FFF0; width:100%; padding:0px; margin:0px; background-color:#ff6666;font-family: 'Roboto', sans-serif;\">Failed to Log in with the provided Login Credentials!</p>"
+//            await sleep(250);
+//            document.getElementById("msg").style.height = 0;
+        }
+        async function login() {
+            var username = "";
+            var password = "";
+            var x = $("form").serializeArray();
+                            $.each(x, function(i, field) {
+                                if(field.name == "username") username = field.value;
+                                if(field.name == "password") password = field.value;
+                });
+            $.ajax({
+  url:  "/auth?type=login&username=" + username + "&password=" + password
+}).done(function(response) {
+            let stateObj = { id: "100" };
+            window.history.replaceState(stateObj,
+                        "Dashboard", "/auth/login");
+document.open();
+document.write(response);
+document.close();
+});
+        } 
+        deletemsg();
+    </script>
+    </body>
+</html>

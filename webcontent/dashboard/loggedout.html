@@ -1,0 +1,37 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+            %stylesheet%
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="/main" class="logo">....</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+    </ul>
+    <div class="loginbgdiv" id="lf">
+        <h1>You have been logged out.</h1>
+        <button id="sbtn" class="button" onclick="btl();">Back to Login page (5)</button>
+    </div>
+<script>
+    function sleep(n) { return new Promise(resolve=>setTimeout(resolve,n)); }
+    function btl() {
+        window.location.href='/auth/login';
+    }
+    async function doStuff() {
+        var i;
+        for (i = 0; i < 5; i++) {
+            await sleep(1000);
+            document.getElementById("sbtn").innerHTML = ('Back to Login page (' + (5 - i) + ')');
+        }
+        btl();
+    }
+    doStuff();
+</script>
+</body>
+</html>
